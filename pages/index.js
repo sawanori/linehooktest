@@ -6,17 +6,13 @@ import { useEffect } from 'react';
 import { useLiff } from 'use-line-liff';
 
 export default function Home() {
-  const { liff } = useLiff()
+   const { liff} = useLiff();
   useEffect(() => {
-    if (!liff) return;
-    if (!liff.isLoggedIn()) {
-      liff.login()
-    }
-    liff.getProfile()
-      .then(profile => {
-        console.log(profile)
-      })
-  },[liff])
+   if (!liff) return;
+   if(!liff.isLoggedIn()) {
+     liff.login();
+   }
+  })
  return (
     <div className={styles.container}>
       <Head>
